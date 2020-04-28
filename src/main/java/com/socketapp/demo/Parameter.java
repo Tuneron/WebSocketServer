@@ -1,0 +1,40 @@
+package com.socketapp.demo;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public enum Parameter {
+    DEVICE(1);
+
+    private Integer id;
+    private String name;
+
+    private static final Map<Integer, Parameter> STATIC_HOLDER = Arrays
+            .stream(Parameter.values())
+            .collect(Collectors.toMap(Parameter::getId, Function.identity())
+            );
+
+    Parameter(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    Parameter(Integer id) {
+        this.id = id;
+        this.name = "";
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public static Parameter of(Integer id) {
+        return STATIC_HOLDER.get(id);
+    }
+}

@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'raut_cloud'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '55506:3306'
+    expose:
+      - '55506'
+    volumes:
+      - ./volumes/dev/mysql:/var/lib/mysql
