@@ -1,8 +1,6 @@
 package com.socketapp.demo;
 
-import antlr.debug.MessageAdapter;
 import com.google.gson.Gson;
-import com.sun.tools.javac.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -29,12 +27,10 @@ public class EchoWebSocketHandler extends TextWebSocketHandler {
 
         Device device = null;
 
-        if(opt)
-        {
+        if(opt) {
              device =  deviceRepo.findById(json.getDeviceId()).get();
         }
-        else
-        {
+        else {
              device =  new Device(json.getDeviceId(), Parameter.DEVICE, LocalDateTime.now(), 1);
         }
 

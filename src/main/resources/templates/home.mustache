@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+   table {
+    width: 500px; /* Ширина таблицы */
+    border: 1px solid green; /* Рамка вокруг таблицы */
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+   }
+   td {
+    text-align: center; /* Выравниваем текст по центру ячейки */
+   }
+  </style>
+</head>
+<body>
+<p>Home page</p>
+
+<table>
+    <tr>
+        <th> id </th>
+        <th> time </th>
+        <th> value </th>
+    </tr>
+    {{#arr}}
+        <tr>
+            <td>{{getId}}</td>
+            <td>{{getTime}}</td>
+            <td>{{getValue}}</td>
+        </tr>
+    {{/arr}}
+</table>
+
+</body>
+</html>
